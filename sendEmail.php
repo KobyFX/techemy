@@ -1,4 +1,5 @@
 <?php
+    require '/usr/share/php/libphp-phpmailer/PHPMailerAutoload.php';    
     use PHPMailer\PHPMailer\PHPMailer;
 
     if (isset($_POST['name']) && isset($_POST['email'])) {
