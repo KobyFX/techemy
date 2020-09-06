@@ -101,7 +101,7 @@
 
 			<!-- Modal Style -->
 	  
- #success_tic .page-body{
+ <style>#success_tic .page-body{
   max-width:300px;
   background-color:#FFFFFF;
   margin:10% auto;
@@ -242,7 +242,7 @@
     width: 37.5px;
     opacity: 1;
   }
-}
+	 }</style>
 
 
 	  
