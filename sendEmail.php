@@ -7,6 +7,7 @@
         $email = $_POST['email'];
         $subject = $_POST['subject'];
         $body = $_POST['body'];
+        $phone = $_POST['phone'];
 
         require_once "PHPMailer/PHPMailer.php";
         require_once "PHPMailer/SMTP.php";
@@ -27,8 +28,31 @@
         $mail->isHTML(true);
         $mail->setFrom($email, $name);
         $mail->addAddress("koby@techemy.com.au"); //enter you email address
-        $mail->Subject = ("$email ($subject)");
-        $mail->Body = $body;
+        $mail->Subject = ("$subject");
+        
+        
+        $html = "Name: <b>$name</b><br>";
+        
+        
+        $html .= "Email: $email <br>";
+        
+        
+        
+        if(!empty($phone)){
+          $html .= "Phone: $phone <br>";
+        }
+        
+        
+        if(!empty($body)){
+          $html .= "Body: ".nl2br($body);
+        }
+
+        $html .= "<hr>Email sent ". date("F j, Y, g:i a");
+
+
+        
+        
+        $mail->Body = $html;
 
         if ($mail->send()) {
             $status = "success";
