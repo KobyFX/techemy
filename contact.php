@@ -92,6 +92,8 @@
             var email = $("#email");
             var subject = $("#subject");
             var body = $("#body");
+            var phone = $("#phone");
+
 
             if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
                 $.ajax({
@@ -101,6 +103,7 @@
                    data: {
                        name: name.val(),
                        email: email.val(),
+                       phone: phone.val(),
                        subject: subject.val(),
                        body: body.val()
                    }, success: function (response) {
